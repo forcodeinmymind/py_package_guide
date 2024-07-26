@@ -1,0 +1,12 @@
+structure for simple package
+----------------------------
+pkg
+├── src
+│   └── pkg
+│       ├── __init__.py
+│       ├── module1.py
+│       └── subpkg
+│           ├── __init__.py
+│           └── module2.py
+├── README.md
+└── pyproject.toml

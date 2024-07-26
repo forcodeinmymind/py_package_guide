@@ -1,0 +1,23 @@
+custom package
+
+
+Source
+------
+- custom packages, NeuralNine, Youtube, 2021-02-12
+
+Links
+-----
+github.com create repository
+pypi.org/  register project
+
+
+Example package 'vidstream' from tutorial
+
++-- vidstream
+    +-- streaming.py
+	    +-- __init__.py
+	    +-- vidstream
++-- LICENSE
++-- README.md
++-- setup.py
+
