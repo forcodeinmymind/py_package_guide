@@ -17,6 +17,7 @@ mypackage/
 ├── README.md
 ├── MANIFEST.in
 ├── pyproject.toml
+├── requirements.txt
 └── setup.py
 ```
 
@@ -26,11 +27,11 @@ mypackage/
    pip install setuptools
 ```
 
-```python
+```setup.py
    from setuptools import find_packages, setup
    setup(
        name='my_package',
-       version='0.1',
+       version='0.0.1',
        packages=find_packages(),
        install_requires=[
            # List your dependencies here "pygame"
@@ -48,6 +49,7 @@ mypackage/
        python_requires='>=3.6',
     )
 ```
+
 
 3. pack
 
@@ -85,11 +87,18 @@ build-backend = "setuptools.build_meta"
 
 - `pip install .` | `pip install *.whl` | `*.tar.gz`
 
+  ```powershell
+     mypackage\pip install .
+  ```
+  -> if `setup.py` is in directory where `pip install .` called,
+     pip will install packages listed in `setup.py`/`install_requires=[...]`
+
 - Recomended: using `installer`
   ```powershell
   pip install installer`
   python -m installer dist/my_package-0.1-py3-none-any.whl
   ```
+
 
 5. ignore certain folders
 
@@ -105,3 +114,33 @@ build-backend = "setuptools.build_meta"
   ```
 
 
+6. Dependencies
+
+- `setup.py`
+  `setup(..., install_requires=[...], ...`
+  -> Minimal, necessary dependencies to run package.
+
+- `requirements.txt`
+  -> All dependencies needed for development, testing,
+     and running the project in specific environments.
+
+  ```powershell
+     `pip freeze > requirements.txt`
+  ```
+  -> automaticaly create `requirements.txt`
+
+- ```requirements.txt
+     p.e.:
+     `numpy`
+     `numpy==1.21.0`
+     `numpy>=1.21.0`
+     `numpy!=1.21.0`
+
+- ```powershell
+     pip install -r requirements.txt
+  ```
+  -> install all required packages listed in requirements.txt
+
+- ChatGPT: `pyproject.toml`
+  Consider modern tools like Poetry for a more integrated and
+  user-friendly approach to dependency management

@@ -1,0 +1,3 @@
+# ignore certain files
+# `prune tests`
+# -> ignore directory `tests`

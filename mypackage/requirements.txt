@@ -1,0 +1,6 @@
+# p.e.:
+# `numpy==1.21.0`
+# `numpy>=1.21.0`
+# `numpy`
+# `numpy!=1.21.0`
+# -> NOT: numpy 1.21.0
